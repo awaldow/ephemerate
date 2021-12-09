@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: namespace-ephemerator-test2
+  labels:
+    name: namespace-ephemerator-test2
+---
+apiVersion: tessellate.io/v1alpha1
+kind: Ephemerator
+metadata:
+    name: ephemerator-deleted
+    annotations:
+        ephemerators.tessellate.io/enabled: 'true'
+spec:
+    resourceToWatch:
+      namespace: namespace-ephemerator-test2
+    lifetime:
+      duration:
+        minutes: 7

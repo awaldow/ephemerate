@@ -1,0 +1,99 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: namespace-ephemerator-test5
+  labels:
+    name: namespace-ephemerator-test5
+---
+apiVersion: tessellate.io/v1alpha1
+kind: Ephemerator
+metadata:
+  name: ephemerator-validation-until
+  annotations:
+    ephemerators.tessellate.io/enabled: 'true'
+spec:
+  resourceToWatch:
+    namespace: namespace-ephemerator-test5
+  lifetime:
+    until:
+      time: '12:00:00'
+      timezone: 'America/Phoenix'
+---
+apiVersion: tessellate.io/v1alpha1
+kind: Ephemerator
+metadata:
+  name: ephemerator-validation-until1
+  annotations:
+    ephemerators.tessellate.io/enabled: 'true'
+spec:
+  resourceToWatch:
+    namespace: namespace-ephemerator-test5
+  lifetime:
+    until:
+      date: 2021-11-26
+      time: '12:00:00'
+---
+apiVersion: tessellate.io/v1alpha1
+kind: Ephemerator
+metadata:
+  name: ephemerator-validation-until2
+  annotations:
+    ephemerators.tessellate.io/enabled: 'true'
+spec:
+  resourceToWatch:
+    namespace: namespace-ephemerator-test5
+  lifetime:
+    until:
+      date: 2021-11-26
+      timezone: 'America/Phoenix'
+---
+apiVersion: tessellate.io/v1alpha1
+kind: Ephemerator
+metadata:
+  name: ephemerator-validation-until3
+  annotations:
+    ephemerators.tessellate.io/enabled: 'true'
+spec:
+  resourceToWatch:
+    namespace: namespace-ephemerator-test5
+  lifetime:
+    until:
+      date: 2021-11-26
+---
+apiVersion: tessellate.io/v1alpha1
+kind: Ephemerator
+metadata:
+  name: ephemerator-validation-until4
+  annotations:
+    ephemerators.tessellate.io/enabled: 'true'
+spec:
+  resourceToWatch:
+    namespace: namespace-ephemerator-test5
+  lifetime:
+    until:
+      time: '12:00:00'
+---
+apiVersion: tessellate.io/v1alpha1
+kind: Ephemerator
+metadata:
+  name: ephemerator-validation-until5
+  annotations:
+    ephemerators.tessellate.io/enabled: 'true'
+spec:
+  resourceToWatch:
+    namespace: namespace-ephemerator-test5
+  lifetime:
+    until:
+      timezone: 'America/Phoenix'
+---
+apiVersion: tessellate.io/v1alpha1
+kind: Ephemerator
+metadata:
+  name: ephemerator-validation-until6
+  annotations:
+    ephemerators.tessellate.io/enabled: 'true'
+spec:
+  resourceToWatch:
+    namespace: namespace-ephemerator-test5
+  lifetime:
+    until:

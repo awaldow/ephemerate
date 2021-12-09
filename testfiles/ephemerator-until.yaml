@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: namespace-ephemerator-test4
+  labels:
+    name: namespace-ephemerator-test4
+---
+apiVersion: tessellate.io/v1alpha1
+kind: Ephemerator
+metadata:
+  name: ephemerator-until
+  annotations:
+    ephemerators.tessellate.io/enabled: 'true'
+spec:
+  resourceToWatch:
+    namespace: namespace-ephemerator-test4
+  lifetime:
+    until:
+      date: 2021-11-26
+      time: '22:20:00'
+      timezone: 'America/Phoenix'

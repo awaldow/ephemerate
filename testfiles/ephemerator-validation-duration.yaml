@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: namespace-ephemerator-test6
+  labels:
+    name: namespace-ephemerator-test6
+---
+apiVersion: tessellate.io/v1alpha1
+kind: Ephemerator
+metadata:
+    name: ephemerator-validation-duration1
+    annotations:
+        ephemerators.tessellate.io/enabled: 'true'
+spec:
+    resourceToWatch:
+      namespace: namespace-ephemerator-test6
+    lifetime:
+      duration:
+        hours: 1
+---
+apiVersion: tessellate.io/v1alpha1
+kind: Ephemerator
+metadata:
+    name: ephemerator-validation-duration2
+    annotations:
+        ephemerators.tessellate.io/enabled: 'true'
+spec:
+    resourceToWatch:
+      namespace: namespace-ephemerator-test6
+    lifetime:
+      duration:
+        hours: 1
+        minutes: 1
+---
+apiVersion: tessellate.io/v1alpha1
+kind: Ephemerator
+metadata:
+    name: ephemerator-validation-duration3
+    annotations:
+        ephemerators.tessellate.io/enabled: 'true'
+spec:
+    resourceToWatch:
+      namespace: namespace-ephemerator-test6
+    lifetime:
+      duration:
+---
+apiVersion: tessellate.io/v1alpha1
+kind: Ephemerator
+metadata:
+    name: ephemerator-validation-duration4
+    annotations:
+        ephemerators.tessellate.io/enabled: 'true'
+spec:
+    resourceToWatch:
+      namespace: namespace-ephemerator-test7
+    lifetime:
+        

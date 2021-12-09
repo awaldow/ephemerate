@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: namespace-ignored
+  labels:
+    name: namespace-ignored
+---
+apiVersion: tessellate.io/v1alpha1
+kind: Ephemerator
+metadata:
+    name: ephemerator-ignored
+    annotations:
+        ephemerators.tessellate.io/enabled: 'true'
+spec:
+    resourceToWatch:
+      namespace: namespace-ignored
+    lifetime:
+      duration:
+        hours: 1

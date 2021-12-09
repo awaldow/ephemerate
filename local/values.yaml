@@ -1,0 +1,18 @@
+image:
+  repository: awaldow/ephemerator
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: v1alpha1-latest
+
+operator:
+  env:
+    - name: 'EPHEMERATE_INTERVAL'
+      value: '60'
+    - name: 'EPHEMERATOR_IGNORE_NAMESPACES'
+      value: 'namespace-ignored'
+resources:
+  requests:
+    cpu: '50m'
+    memory: '100Mi'
+  limits:
+    cpu: '100m'
+    memory: '250Mi'
