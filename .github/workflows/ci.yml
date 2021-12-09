@@ -10,7 +10,7 @@ on:
       - main
 
 jobs:
-  lint-and-test:
+  lint:
     runs-on: ubuntu-latest
     strategy:
       matrix:
