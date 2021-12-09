@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    tags:
+      - 'v*'
   pull_request:
     types: ['opened', 'reopened']
     branches:
@@ -45,7 +47,7 @@ jobs:
       - name: Analysing the code with pylint
         run: |
           cd Ephemerator
-          pipenv run pylint --rcfile ../../pylintrc `ls -R|grep .py$|xargs`
+          pipenv run pylint --rcfile ../pylintrc `ls -R|grep .py$|xargs`
 
       - name: Docker Lint
         uses: luke142367/Docker-Lint-Action@v1.1.1
@@ -71,14 +73,12 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: awaldow/ephemerator
-          flavor: |
-            latest=false
           tags: |
             type=ref,event=branch
-            type=ref,suffix=-latest,event=branch
             type=ref,event=pr
-            type=ref,event=tag
-            latest
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/v0.') }}
 
       - name: Login to Dockerhub
         uses: docker/login-action@v1
