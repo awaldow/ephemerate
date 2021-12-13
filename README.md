@@ -1,7 +1,6 @@
 # Ephemerate
 
-[![lint-v1alpha1](https://github.com/awaldow/ephemerate/actions/workflows/lint-v1alpha1.yml/badge.svg)](https://github.com/awaldow/ephemerate/actions/workflows/lint-v1alpha1.yml)
-[![ci-v1alpha1](https://github.com/awaldow/ephemerate/actions/workflows/ci-v1alpha1.yml/badge.svg)](https://github.com/awaldow/ephemerate/actions/workflows/ci-v1alpha1.yml)
+[![ci](https://github.com/awaldow/ephemerate/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/awaldow/ephemerate/actions/workflows/ci.yml)
 
 This project is designed to allow K8s admins/developers to place lifetimes on
 namespaces in their cluster. This is accomplished by an operator and a CRD
