@@ -1,7 +1,7 @@
 image:
-  repository: awaldow/ephemerator
+  repository: local/ephemerator
   # Overrides the image tag whose default is the chart appVersion.
-  tag: v1alpha1-latest
+  tag: latest
 
 operator:
   env:
