@@ -1,6 +1,6 @@
 #!/bin/bash
 
 scriptRoot=$(pwd)
-cd ../../Ephemerator/v1alpha1
-docker build -t local/ephemerator:v1alpha1-latest .
+cd ../Ephemerator
+docker build -t local/ephemerator:latest .
 cd $scriptRoot
