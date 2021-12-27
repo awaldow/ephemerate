@@ -1,7 +1,17 @@
 image:
   repository: local/ephemerator
   # Overrides the image tag whose default is the chart appVersion.
+  pullPolicy: IfNotPresent
   tag: latest
+
+securityContext:
+  capabilities:
+    drop:
+    - ALL
+  readOnlyRootFilesystem: true
+  allowPrivilegeEscalation: false
+  runAsNonRoot: true
+  runAsUser: 1000
 
 operator:
   env:
