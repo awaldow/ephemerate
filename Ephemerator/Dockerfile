@@ -1,4 +1,4 @@
-FROM python:3.9.9-alpine
+FROM python:3.11.0b1-alpine
 RUN pip install --upgrade pip
 WORKDIR /home/ephemerate
 ENV PATH="/home/ephemerate/.local/bin:${PATH}"
